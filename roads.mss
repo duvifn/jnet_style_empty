@@ -4,7 +4,7 @@
 
 /* At lower zoomlevels, just show major automobile routes: motorways
 and trunks. */
-/*
+
 #roads_low[zoom=9] {
   [type='motorway'] { line-color: @motorway_line; }
   [type='trunk'] { line-color: @trunk_line; }
@@ -21,11 +21,11 @@ and trunks. */
     [type='motorway'] { line-width: 1; }
     [type='trunk'] { line-width: 0.5; } }
 }
-*/
+
 /* At mid-level scales start to show primary and secondary routes
 as well. */
-/*
-#roads_med[zoom=10] {
+
+#roads_med[zoom>=10] {
   [type='motorway'],
   [type='motorway_link'] {
     line-color: @motorway_line;
@@ -48,7 +48,7 @@ as well. */
     [type='motorway_link'],[type='trunk_link'] { line-width: 0.6; }
   }
 }
-*/
+
 /* At higher levels the roads become more complex. We're now showing 
 more than just automobile routes - railways, footways, and cycleways
 come in as well.
