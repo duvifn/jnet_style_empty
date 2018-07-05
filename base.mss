@@ -70,7 +70,7 @@ Map { background-color: @water; }
   }
 
 /* ---- BUILDINGS ---- */
-#buildings[zoom>=12][zoom<=16] {
+/*#buildings[zoom>=12][zoom<=16] {
   polygon-fill:@building;
   [zoom>=14] {
     line-color:darken(@building,5%);
@@ -92,7 +92,7 @@ Map { background-color: @water; }
 #buildings[zoom>=17][type = 'hedge'] {
   building-fill:@wooded;
   building-height:1.25;
-}
+}*/
 
 #hillshade_90::z13[zoom=13] {
   image-filters: agg-stack-blur(1,1);
@@ -295,7 +295,7 @@ Map { background-color: @water; }
 /* ================================================================== */
 /* INFRASTRUCTURE
 /* ================================================================== */
-#airports {
+/*#airports {
     ::poly {
     	[zoom>=10][zoom <= 13] {
       		polygon-fill:#cdcdcd;
@@ -317,7 +317,7 @@ Map { background-color: @water; }
           marker-placement: interior;
       }
     }
-  }
+  }*/
 /* ================================================================== */
 /* BARRIER POINTS
 /* ================================================================== */

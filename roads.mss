@@ -4,7 +4,7 @@
 
 /* At lower zoomlevels, just show major automobile routes: motorways
 and trunks. */
-
+/*
 #roads_low[zoom=9] {
   [type='motorway'] { line-color: @motorway_line; }
   [type='trunk'] { line-color: @trunk_line; }
@@ -21,10 +21,10 @@ and trunks. */
     [type='motorway'] { line-width: 1; }
     [type='trunk'] { line-width: 0.5; } }
 }
-
+*/
 /* At mid-level scales start to show primary and secondary routes
 as well. */
-
+/*
 #roads_med[zoom=10] {
   [type='motorway'],
   [type='motorway_link'] {
@@ -48,7 +48,7 @@ as well. */
     [type='motorway_link'],[type='trunk_link'] { line-width: 0.6; }
   }
 }
-
+*/
 /* At higher levels the roads become more complex. We're now showing 
 more than just automobile routes - railways, footways, and cycleways
 come in as well.
@@ -64,12 +64,12 @@ come in as well.
 @rdz18_maj: 20;  @rdz18_med: 17;  @rdz18_min: 14;
 
 /* ---- Casing ----------------------------------------------- */
-
+/*
 #roads_high::outline[zoom>=11][zoom<=20],
 #tunnel[render='1_outline'][zoom>=11][zoom<=20],
-#bridge[render='1_outline'][zoom>=11][zoom<=20]{
+#bridge[render='1_outline'][zoom>=11][zoom<=20]{*/
   /* -- colors & styles -- */
-  line-cap: round;
+ /* line-cap: round;
   [bridge=1],
   [tunnel=1] {
     line-cap: butt;
@@ -104,32 +104,32 @@ come in as well.
   [stylegroup='service'] {
     line-dasharray: 10, 3, 2, 3;
    }
-  [tunnel=1] { line-dasharray: 3,3; }        
+  [tunnel=1] { line-dasharray: 3,3; } */
   /* -- widths -- */
-  [zoom=11] {
+  /*[zoom=11] {
     [stylegroup='motorway'] { line-width: @rdz11_maj + 1; }
     [stylegroup='mainroad'] { line-width: @rdz11_med + 0.8; }
-    [stylegroup='minorroad']{ line-width: 0;} 
+    [stylegroup='minorroad']{ line-width: 0;} */
     /* No minor bridges yet */
-    [stylegroup='service']  { line-width: 0; }
+ /*   [stylegroup='service']  { line-width: 0; }
     [stylegroup='noauto']   { line-width: 0; }
     [stylegroup='railway']  { line-width: 0; }
   }
   [zoom=12] {
     [stylegroup='motorway'] { line-width: @rdz12_maj + 2; }
     [stylegroup='mainroad'] { line-width: @rdz12_med + 2; }
-    [stylegroup='minorroad']{ line-width:0; }
+    [stylegroup='minorroad']{ line-width:0; }*/
     /* No minor bridges yet */
-    [stylegroup='service']  { line-width: 0; }
+/*    [stylegroup='service']  { line-width: 0; }
     [stylegroup='noauto']   { line-width: 0; }
     [stylegroup='railway']  { line-width: 0; }
   }
   [zoom=13] {
     [stylegroup='motorway'] { line-width: @rdz13_maj + 2; }
     [stylegroup='mainroad'] { line-width: @rdz13_med + 2; }
-    [stylegroup='minorroad']{ line-width: @rdz13_min; }
+    [stylegroup='minorroad']{ line-width: @rdz13_min; }*/
     /* No minor bridges yet */
-    [stylegroup='service']  { 
+/*    [stylegroup='service']  { 
       line-width: 0;
       line-color:gray; 
     }
@@ -139,9 +139,9 @@ come in as well.
   [zoom=14] {
     [stylegroup='motorway'] { line-width: @rdz14_maj + 2; }
     [stylegroup='mainroad'] { line-width: @rdz14_med + 2; }
-    [stylegroup='minorroad']{ line-width: @rdz14_min; }
+    [stylegroup='minorroad']{ line-width: @rdz14_min; }*/
     /* No minor bridges yet */
-    [stylegroup='service']  { 
+  /*  [stylegroup='service']  { 
       line-width: 1.6;
       line-color: #aaa; 
     }
@@ -202,9 +202,9 @@ come in as well.
 
 #roads_high[zoom>=11][zoom<=20],
 #tunnel[render='3_inline'][zoom>=11][zoom<=20],
-#bridge[render='3_inline'][zoom>=11][zoom<=20]{
+#bridge[render='3_inline'][zoom>=11][zoom<=20]{*/
   /* -- colors & styles -- */
-  line-color: @standard_fill;
+/*  line-color: @standard_fill;
   [type='motorway'],
   [type='motorway_link'] {
     line-color: @motorway_fill;
@@ -248,9 +248,9 @@ come in as well.
   }
   [tunnel=1] {
     line-cap: butt;
-  }
+  }*/
   /* -- widths -- */
-  [zoom=11] {
+  /*[zoom=11] {
     [stylegroup='motorway'] { line-width: @rdz11_maj; }
     [stylegroup='mainroad'] { line-width: @rdz11_med; }
     [stylegroup='minorroad']{ line-width: 0; }
@@ -327,12 +327,12 @@ come in as well.
     [stylegroup='railway']  { line-width: 4; }
   }
 }
-
+*/
 /* ---- Bridge fill for dashed lines -------------------------------- */
-#tunnel[render='2_line'][zoom>=14][zoom<=20],
-#bridge[render='2_line'][zoom>=14][zoom<=20]{
+/*#tunnel[render='2_line'][zoom>=14][zoom<=20],
+#bridge[render='2_line'][zoom>=14][zoom<=20]{*/
   /* -- colors & styles -- */
-  [stylegroup='noauto'] {
+ /* [stylegroup='noauto'] {
     line-color: @land;
     line-width: 0;
     line-join: round;
@@ -340,9 +340,9 @@ come in as well.
   [stylegroup='railway'] {
     line-color: @land;
     line-join: round;
-  }
+  }*/
   /* -- widths -- */
-  [zoom=14] {
+/*  [zoom=14] {
     [stylegroup='noauto']   { line-width: @rdz14_min / 4 + 1; }
     [stylegroup='railway']  { line-width: 1 + 1; }
   }
@@ -362,10 +362,10 @@ come in as well.
     [stylegroup='noauto']   { line-width: @rdz18_min / 4 + 3; }
     [stylegroup='railway']  { line-width: 4 + 3; }
   }
-}
+}*/
 
 /* ---- Turning Circles --------------------------------------------- */
-#turning_circle_case[zoom>=14] {
+/*#turning_circle_case[zoom>=14] {
   marker-fill:@standard_fill;
   marker-line-color:@standard_case;
   marker-line-width:2;
@@ -385,11 +385,11 @@ come in as well.
   [zoom=17] { marker-width:@rdz17_min * 1.1; }
   [zoom>=18] { marker-width:@rdz18_min * 1.1; }
 }
-
+*/
 /* ================================================================== */
 /* AEROWAYS
 /* ================================================================== */
-
+/*
 #aeroway[zoom>9] {
   line-color:@aeroway;
   line-cap:butt;
@@ -417,5 +417,5 @@ come in as well.
     [zoom>17]{ line-width:5; }
   }
 }
-
+*/
 /******************************************************************* */
