@@ -34,8 +34,6 @@ parser.add_argument('-k' ,'--simplified_land_polygons', metavar='SIMPLIFIED_LAND
                     help='A path to simplified_land_polygons.shp')
 parser.add_argument('-b' ,'--land_polygons', metavar='LAND_POLYGONS', type=str, required=True,
                     help='A path to land_polygons.shp')
-parser.add_argument('-j' ,'--ne_places', metavar='NE_PLACES', type=str, required=True,
-                    help='A path to ne_10m_populated_places.shp')
 parser.add_argument('-l' ,'--language', metavar='LANGUAGE', type=str, default='en',
                     help='A prefered language code in which to title places')                  
 args = parser.parse_args()
@@ -51,7 +49,6 @@ input_file = input_file.replace('<Parameter name="file"><![CDATA[/home/duvi/Docu
 input_file = input_file.replace('<Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/hillshade_700.tif]]></Parameter>', '<Parameter name="file"><![CDATA[' + args.external_layers_folder + '/hillshade_700.tif]]></Parameter>')
 input_file = input_file.replace('<Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/hillshade_1000.tif]]></Parameter>', '<Parameter name="file"><![CDATA[' + args.external_layers_folder + '/hillshade_1000.tif]]></Parameter>')
 input_file = input_file.replace('<Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/hillshade_5000.tif]]></Parameter>', '<Parameter name="file"><![CDATA[' + args.external_layers_folder + '/hillshade_5000.tif]]></Parameter>')
-input_file = input_file.replace('<Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/ne_places/ne_10m_populated_places.shp]]></Parameter>', '<Parameter name="file"><![CDATA['  + args.ne_places + ']]></Parameter>')
 input_file = input_file.replace('<Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/land-low/simplified_land_polygons.shp]]></Parameter>', '<Parameter name="file"><![CDATA['  + args.simplified_land_polygons + ']]></Parameter>')
 input_file = input_file.replace('<Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/land-high/land_polygons.shp]]></Parameter>', '<Parameter name="file"><![CDATA[' + args.land_polygons  + ']]></Parameter>')
 input_file = input_file.replace('tags -> \'name:en\'', 'tags -> \'name:' + args.language  + '\'')
