@@ -38,7 +38,7 @@ parser.add_argument('-l' ,'--language', metavar='LANGUAGE', type=str, default='e
                     help='A prefered language code in which to title places')                  
 args = parser.parse_args()
 
-# python replace_mapnik_style.py -i mapnik.xml -d fake_dbname -u fake_user_name -p fake_password -s fake_host -e /fake_path/to/external/layers -k /media/duvi/Extreme/temp/openstreetmap-carto/data/simplified-land-polygons-complete-3857/simplified_land_polygons.shp -b /media/duvi/Extreme/temp/openstreetmap-carto/data/land-polygons-split-3857/land_polygons.shp
+# python replace_mapnik_style.py -i mapnik.xml -d fake_dbname -u fake_user_name -p fake_password -s fake_host -e /media/duvi/Extreme/TopoOSM/OpenTopoMap/raw -k /media/duvi/Extreme/temp/openstreetmap-carto/data/simplified-land-polygons-complete-3857/simplified_land_polygons.shp -b /media/duvi/Extreme/temp/openstreetmap-carto/data/land-polygons-split-3857/land_polygons.shp
 input_file=open(args.input_file).read()
 input_file = input_file.replace('<Parameter name="dbname"><![CDATA[fake_db_name]]></Parameter>','<Parameter name="dbname"><![CDATA[' + args.db_name +']]></Parameter>')
 input_file = input_file.replace('<Parameter name="user"><![CDATA[fake_user_name]]></Parameter>', '<Parameter name="user"><![CDATA[' +  args.user_name + ']]></Parameter>')
