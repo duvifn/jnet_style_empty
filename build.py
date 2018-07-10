@@ -49,8 +49,8 @@ input_file = input_file.replace('<Parameter name="file"><![CDATA[/home/duvi/Docu
 input_file = input_file.replace('<Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/hillshade_700.tif]]></Parameter>', '<Parameter name="file"><![CDATA[' + args.external_layers_folder + '/hillshade_700.tif]]></Parameter>')
 input_file = input_file.replace('<Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/hillshade_1000.tif]]></Parameter>', '<Parameter name="file"><![CDATA[' + args.external_layers_folder + '/hillshade_1000.tif]]></Parameter>')
 input_file = input_file.replace('<Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/hillshade_5000.tif]]></Parameter>', '<Parameter name="file"><![CDATA[' + args.external_layers_folder + '/hillshade_5000.tif]]></Parameter>')
-input_file = input_file.replace('<Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/land-low/simplified_land_polygons.shp]]></Parameter>', '<Parameter name="file"><![CDATA['  + args.simplified_land_polygons + ']]></Parameter>')
-input_file = input_file.replace('<Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/land-high/land_polygons.shp]]></Parameter>', '<Parameter name="file"><![CDATA[' + args.land_polygons  + ']]></Parameter>')
+input_file = input_file.replace('<Parameter name="file"><![CDATA[/media/duvi/Extreme/temp/openstreetmap-carto/data/simplified-land-polygons-complete-3857/simplified_land_polygons.shp]]></Parameter>', '<Parameter name="file"><![CDATA['  + args.simplified_land_polygons + ']]></Parameter>')
+input_file = input_file.replace('<Parameter name="file"><![CDATA[/media/duvi/Extreme/temp/openstreetmap-carto/data/land-polygons-split-3857/land_polygons.shp]]></Parameter>', '<Parameter name="file"><![CDATA[' + args.land_polygons  + ']]></Parameter>')
 input_file = input_file.replace('tags -> \'name:en\'', 'tags -> \'name:' + args.language  + '\'')
 
        
@@ -69,9 +69,8 @@ if args.input_project_file:
     input_file = input_file.replace('/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_700.tif', args.external_layers_folder + '/hillshade_700.tif')
     input_file = input_file.replace('/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_1000.tif', args.external_layers_folder + '/hillshade_1000.tif')
     input_file = input_file.replace('/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_5000.tif', args.external_layers_folder + '/hillshade_5000.tif')
-    input_file = input_file.replace('/media/duvi/Extreme/TopoOSM/OpenTopoMap/osm-bright/osm-bright/shp/ne_10m_populated_places/ne_10m_populated_places.shp', args.external_layers_folder + '/ne_places/ne_10m_populated_places.shp')
-    input_file = input_file.replace('/media/duvi/Extreme/TopoOSM/data/shp/land_low/simplified_land_polygons.shp', args.simplified_land_polygons)
-    input_file= input_file.replace('/media/duvi/Extreme/TopoOSM/OpenTopoMap/osm-bright/osm-bright/shp/land-polygons-split-3857/land_polygons.shp', args.land_polygons)
+    input_file = input_file.replace('/media/duvi/Extreme/temp/openstreetmap-carto/data/simplified-land-polygons-complete-3857/simplified_land_polygons.shp', args.simplified_land_polygons)
+    input_file= input_file.replace('/media/duvi/Extreme/temp/openstreetmap-carto/data/land-polygons-split-3857/land_polygons.shp', args.land_polygons)
     input_file = input_file.replace('tags -> \'name:en\'', 'tags -> \'name:' + args.language  + '\'')
     
     with open(args.input_project_file, 'w') as of:
