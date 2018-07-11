@@ -1408,7 +1408,7 @@
     <StyleName>hillshade_30-z18</StyleName>
     <StyleName>hillshade_30</StyleName>
     <Datasource>
-           <Parameter name="file"><![CDATA[/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_30.tif]]></Parameter>
+            <Parameter name="file"><![CDATA[/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_30.tif]]></Parameter>
        <Parameter name="type"><![CDATA[gdal]]></Parameter>
     </Datasource>
   </Layer>
