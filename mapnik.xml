@@ -11,7 +11,7 @@
   <Parameter name="scale">1</Parameter>
   <Parameter name="metatile">1</Parameter>
   <Parameter name="id"><![CDATA[general_empty]]></Parameter>
-  <Parameter name="_updated">1530798550000</Parameter>
+  <Parameter name="_updated">1531991557000</Parameter>
   <Parameter name="attribution"><![CDATA[Data © OpenStreetMap (and) contributors, ODbL]]></Parameter>
   <Parameter name="name"><![CDATA[JNet Empty]]></Parameter>
   <Parameter name="tilejson"><![CDATA[2.0.0]]></Parameter>
@@ -64,7 +64,7 @@
     <Datasource>
        <Parameter name="dbname"><![CDATA[osm]]></Parameter>
        <Parameter name="extent"><![CDATA[-20037508.34,-20037508.34,20037508.34,20037508.34]]></Parameter>
-       <Parameter name="file"><![CDATA[/media/duvi/Extreme/temp/openstreetmap-carto/data/simplified-land-polygons-complete-3857/simplified_land_polygons.shp]]></Parameter>
+       <Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/land-low/simplified_land_polygons.shp]]></Parameter>
        <Parameter name="srs"><![CDATA[+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over]]></Parameter>
        <Parameter name="type"><![CDATA[shape]]></Parameter>
     </Datasource>
@@ -81,7 +81,7 @@
     <StyleName>land-high</StyleName>
     <Datasource>
        <Parameter name="extent"><![CDATA[-20037508.34,-20037508.34,20037508.34,20037508.34]]></Parameter>
-       <Parameter name="file"><![CDATA[/media/duvi/Extreme/temp/openstreetmap-carto/data/land-polygons-split-3857/land_polygons.shp]]></Parameter>
+       <Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/land-high/land_polygons.shp]]></Parameter>
        <Parameter name="type"><![CDATA[shape]]></Parameter>
     </Datasource>
   </Layer>
@@ -791,49 +791,49 @@
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([type] = 'river') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'canal') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] = 'river') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'canal') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([type] = 'river')</Filter>
+    <Filter>([type] = 'canal')</Filter>
     <LineSymbolizer stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] = 'river')</Filter>
+    <Filter>([type] = 'canal')</Filter>
     <LineSymbolizer stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([type] = 'canal') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'river') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] = 'canal') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'river') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([type] = 'canal')</Filter>
+    <Filter>([type] = 'river')</Filter>
     <LineSymbolizer stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
-    <Filter>([type] = 'canal')</Filter>
+    <Filter>([type] = 'river')</Filter>
     <LineSymbolizer stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="#b3d6f6" />
   </Rule>
   <Rule>
@@ -932,166 +932,166 @@
   </Rule>
   <Rule>
     <MaxScaleDenominator>750</MaxScaleDenominator>
-    <Filter>([type] = 'drain') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'ditch') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="1.5" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>1500</MaxScaleDenominator>
     <MinScaleDenominator>750</MinScaleDenominator>
-    <Filter>([type] = 'drain') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'ditch') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="1" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>2500</MaxScaleDenominator>
     <MinScaleDenominator>1500</MinScaleDenominator>
-    <Filter>([type] = 'drain') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'ditch') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="0.7" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
     <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([type] = 'drain') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'ditch') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="0.5" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([type] = 'drain') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'ditch') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="0.3" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([type] = 'drain') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'ditch') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="0.1" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([type] = 'drain') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'ditch') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>750</MaxScaleDenominator>
-    <Filter>([type] = 'drain')</Filter>
+    <Filter>([type] = 'ditch')</Filter>
     <LineSymbolizer stroke-width="1.5" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>1500</MaxScaleDenominator>
     <MinScaleDenominator>750</MinScaleDenominator>
-    <Filter>([type] = 'drain')</Filter>
+    <Filter>([type] = 'ditch')</Filter>
     <LineSymbolizer stroke-width="1" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>2500</MaxScaleDenominator>
     <MinScaleDenominator>1500</MinScaleDenominator>
-    <Filter>([type] = 'drain')</Filter>
+    <Filter>([type] = 'ditch')</Filter>
     <LineSymbolizer stroke-width="0.7" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
     <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([type] = 'drain')</Filter>
+    <Filter>([type] = 'ditch')</Filter>
     <LineSymbolizer stroke-width="0.5" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([type] = 'drain')</Filter>
+    <Filter>([type] = 'ditch')</Filter>
     <LineSymbolizer stroke-width="0.3" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([type] = 'drain')</Filter>
+    <Filter>([type] = 'ditch')</Filter>
     <LineSymbolizer stroke-width="0.1" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([type] = 'drain')</Filter>
+    <Filter>([type] = 'ditch')</Filter>
     <LineSymbolizer stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>750</MaxScaleDenominator>
-    <Filter>([type] = 'ditch') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'drain') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="1.5" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>1500</MaxScaleDenominator>
     <MinScaleDenominator>750</MinScaleDenominator>
-    <Filter>([type] = 'ditch') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'drain') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="1" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>2500</MaxScaleDenominator>
     <MinScaleDenominator>1500</MinScaleDenominator>
-    <Filter>([type] = 'ditch') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'drain') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="0.7" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
     <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([type] = 'ditch') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'drain') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="0.5" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([type] = 'ditch') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'drain') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="0.3" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([type] = 'ditch') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'drain') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-width="0.1" stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([type] = 'ditch') and ([int_intermittent] = 'yes')</Filter>
+    <Filter>([type] = 'drain') and ([int_intermittent] = 'yes')</Filter>
     <LineSymbolizer stroke-dasharray="10, 4" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>750</MaxScaleDenominator>
-    <Filter>([type] = 'ditch')</Filter>
+    <Filter>([type] = 'drain')</Filter>
     <LineSymbolizer stroke-width="1.5" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>1500</MaxScaleDenominator>
     <MinScaleDenominator>750</MinScaleDenominator>
-    <Filter>([type] = 'ditch')</Filter>
+    <Filter>([type] = 'drain')</Filter>
     <LineSymbolizer stroke-width="1" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>2500</MaxScaleDenominator>
     <MinScaleDenominator>1500</MinScaleDenominator>
-    <Filter>([type] = 'ditch')</Filter>
+    <Filter>([type] = 'drain')</Filter>
     <LineSymbolizer stroke-width="0.7" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
     <MinScaleDenominator>2500</MinScaleDenominator>
-    <Filter>([type] = 'ditch')</Filter>
+    <Filter>([type] = 'drain')</Filter>
     <LineSymbolizer stroke-width="0.5" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
-    <Filter>([type] = 'ditch')</Filter>
+    <Filter>([type] = 'drain')</Filter>
     <LineSymbolizer stroke-width="0.3" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
-    <Filter>([type] = 'ditch')</Filter>
+    <Filter>([type] = 'drain')</Filter>
     <LineSymbolizer stroke-width="0.1" stroke="#b3d6f6" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([type] = 'ditch')</Filter>
+    <Filter>([type] = 'drain')</Filter>
     <LineSymbolizer stroke="#b3d6f6" />
   </Rule>
   <Rule>
@@ -1408,7 +1408,7 @@
     <StyleName>hillshade_30-z18</StyleName>
     <StyleName>hillshade_30</StyleName>
     <Datasource>
-                 <Parameter name="file"><![CDATA[/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_30.tif]]></Parameter>
+       <Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/hillshade_30.tif]]></Parameter>
        <Parameter name="type"><![CDATA[gdal]]></Parameter>
     </Datasource>
   </Layer>
@@ -1417,12 +1417,12 @@
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
-    <RasterSymbolizer comp-op="grain-merge" scaling="bilinear" opacity="0.6" />
+    <RasterSymbolizer comp-op="grain-merge" scaling="bilinear" opacity="0.65" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>1500000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
-    <RasterSymbolizer comp-op="multiply" scaling="bilinear" opacity="0.32" />
+    <RasterSymbolizer comp-op="multiply" scaling="bilinear" opacity="0.65" />
   </Rule>
 </Style>
 <Style name="hillshade_90-z13" filter-mode="first" image-filters="agg-stack-blur(1,1)">
@@ -1432,7 +1432,7 @@
     <StyleName>hillshade_90-z13</StyleName>
     <StyleName>hillshade_90</StyleName>
     <Datasource>
-       <Parameter name="file"><![CDATA[/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_90.tif]]></Parameter>
+       <Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/hillshade_90.tif]]></Parameter>
        <Parameter name="type"><![CDATA[gdal]]></Parameter>
     </Datasource>
   </Layer>
@@ -1441,14 +1441,14 @@
   <Rule>
     <MaxScaleDenominator>6500000</MaxScaleDenominator>
     <MinScaleDenominator>1500000</MinScaleDenominator>
-    <RasterSymbolizer comp-op="multiply" scaling="bilinear" opacity="0.32" />
+    <RasterSymbolizer comp-op="multiply" scaling="bilinear" opacity="0.65" />
   </Rule>
 </Style>
 <Layer name="hillshade_700"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>hillshade_700</StyleName>
     <Datasource>
-       <Parameter name="file"><![CDATA[/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_700.tif]]></Parameter>
+       <Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/hillshade_700.tif]]></Parameter>
        <Parameter name="type"><![CDATA[gdal]]></Parameter>
     </Datasource>
   </Layer>
@@ -1457,14 +1457,14 @@
   <Rule>
     <MaxScaleDenominator>25000000</MaxScaleDenominator>
     <MinScaleDenominator>6500000</MinScaleDenominator>
-    <RasterSymbolizer comp-op="multiply" scaling="bilinear" opacity="0.32" />
+    <RasterSymbolizer comp-op="multiply" scaling="bilinear" opacity="0.6" />
   </Rule>
 </Style>
 <Layer name="hillshade_1000"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>hillshade_1000</StyleName>
     <Datasource>
-       <Parameter name="file"><![CDATA[/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_1000.tif]]></Parameter>
+       <Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/hillshade_1000.tif]]></Parameter>
        <Parameter name="type"><![CDATA[gdal]]></Parameter>
     </Datasource>
   </Layer>
@@ -1473,14 +1473,14 @@
   <Rule>
     <MaxScaleDenominator>500000000</MaxScaleDenominator>
     <MinScaleDenominator>25000000</MinScaleDenominator>
-    <RasterSymbolizer comp-op="multiply" scaling="bilinear" opacity="0.32" />
+    <RasterSymbolizer comp-op="multiply" scaling="bilinear" opacity="0.5" />
   </Rule>
 </Style>
 <Layer name="hillshade_5000"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
     <StyleName>hillshade_5000</StyleName>
     <Datasource>
-       <Parameter name="file"><![CDATA[/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_5000.tif]]></Parameter>
+       <Parameter name="file"><![CDATA[/home/duvi/Documents/MapBox/project/general_empty/layers/hillshade_5000.tif]]></Parameter>
        <Parameter name="type"><![CDATA[gdal]]></Parameter>
     </Datasource>
   </Layer>
@@ -1933,9 +1933,15 @@ SELECT
 
 <Style name="admin-maritime" filter-mode="first">
   <Rule>
-    <MaxScaleDenominator>200000000</MaxScaleDenominator>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
     <Filter>([admin_level] = '2') and ([maritime] = 'yes')</Filter>
-    <LineSymbolizer stroke="#a3c2df" stroke-width="4" stroke-opacity="1" />
+    <LineSymbolizer stroke="#a0c3e3" stroke-width="4" stroke-opacity="1" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([admin_level] = '2') and ([maritime] = 'yes')</Filter>
+    <LineSymbolizer stroke="#91aec7" stroke-width="4" stroke-opacity="1" />
   </Rule>
 </Style>
 <Style name="admin" filter-mode="first">
@@ -1959,12 +1965,12 @@ SELECT
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000000</MaxScaleDenominator>
-    <MinScaleDenominator>750000</MinScaleDenominator>
+    <MinScaleDenominator>200000</MinScaleDenominator>
     <Filter>([admin_level] = '2')</Filter>
     <LineSymbolizer stroke-width="2" stroke="#ffffff" />
   </Rule>
   <Rule>
-    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
     <Filter>([admin_level] = '2')</Filter>
     <LineSymbolizer stroke="#ffffff" stroke-width="2" />
   </Rule>
