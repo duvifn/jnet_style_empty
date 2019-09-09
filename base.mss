@@ -69,31 +69,6 @@ Map { background-color: @water; }
   [zoom>14] { polygon-pattern-file:url(img/marsh-32.png);}
   }
 
-/* ---- BUILDINGS ---- */
-/*#buildings[zoom>=12][zoom<=16] {
-  polygon-fill:@building;
-  [zoom>=14] {
-    line-color:darken(@building,5%);
-    line-width:0.2;
-  }
-  [zoom>=16] {
-    line-color:darken(@building,10%);
-    line-width:0.4;
-  }
-}
-// At the highest zoom levels, render buildings in fancy pseudo-3D.
-// Ordering polygons by their Y-position is necessary for this effect
-// so we use a separate layer that does this for us.
-#buildings[zoom>=17][type != 'hedge'] {
-  building-fill:@building;
-  building-height:1.25;
-}
-
-#buildings[zoom>=17][type = 'hedge'] {
-  building-fill:@wooded;
-  building-height:1.25;
-}*/
-
 #hillshade_90::z13[zoom=13] {
   image-filters: agg-stack-blur(1,1);
 }
@@ -119,7 +94,7 @@ Map { background-color: @water; }
 
 #hillshade_5000 {
    [zoom>=1][zoom<=4]{
-    raster-comp-op: multiply;
+    raster-comp-op: grain-merge;
     raster-scaling: bilinear;
     raster-opacity:0.5;
   }
@@ -127,7 +102,7 @@ Map { background-color: @water; }
 
 #hillshade_1000 {
    [zoom>=5][zoom<=6]{
-    raster-comp-op: multiply;
+    raster-comp-op: grain-merge;
     raster-scaling: bilinear;
     raster-opacity:0.6;
   }
@@ -135,7 +110,7 @@ Map { background-color: @water; }
 
 #hillshade_700 {
    [zoom>=7][zoom<=8]{
-    raster-comp-op: multiply;
+    raster-comp-op: grain-merge;
     raster-scaling: bilinear;
     raster-opacity:0.65;
   }
@@ -143,7 +118,7 @@ Map { background-color: @water; }
 
 #hillshade_90 {
   [zoom>=9][zoom<=12]{
-    raster-comp-op: multiply;
+    raster-comp-op: grain-merge;
     raster-scaling: bilinear;
     raster-opacity:0.65;
    }
@@ -246,18 +221,22 @@ Map { background-color: @water; }
 #admin[admin_level='2'][zoom>1] {
     line-color:@admin_2;
     line-width:2;
-    [zoom>=2][zoom<=11]{
-        line-width:2;
+     [zoom>=2][zoom<=11]{
+      line-width:3;
+    }
+    
+    [zoom>11]{
+      line-width:3;
     }
     [zoom=2] { line-opacity: 0.25; }
     [zoom=3] { line-opacity: 0.3; }
     [zoom=4] { line-opacity: 0.4; }
   /* Remove any maritime borders. Unfortunatly this is the only way to do this */
   ::maritime[maritime='yes'][zoom>1]{
-    line-color: #91aec7;
+    line-color: rgb(144, 184, 209);
     line-width:4;
     line-opacity: 1.0;
-    [zoom >= 13] { line-color: #a0c3e3 }
+    [zoom >= 13] { line-color: rgb(144, 184, 209); }
   }
 }
 
@@ -293,32 +272,7 @@ Map { background-color: @water; }
     }
   }
 }
-/* ================================================================== */
-/* INFRASTRUCTURE
-/* ================================================================== */
-/*#airports {
-    ::poly {
-    	[zoom>=10][zoom <= 13] {
-      		polygon-fill:#cdcdcd;
-    		line-color:darken(@land,10%);
-    		line-width:0.6;
-            [zoom = 12] { polygon-opacity: 0.7; }
-            [zoom = 13] { polygon-opacity: 0.5; }
-         }
-    }
-    ::points {
-      [zoom>=10][zoom < 14][aeroway = 'aerodrome']['access' != 'private']['icao' != null]['iata' != null],
-      [aeroway = 'aerodrome'][zoom >= 11][zoom < 14]{
-          marker-height: 10;
-          marker-width: 10;
-          marker-file: url('res/airport-24.svg');
-          marker-fill: #aaa;
-          marker-line-opacity:0.6;
-          //marker-allow-overlap:true;
-          marker-placement: interior;
-      }
-    }
-  }*/
+
 /* ================================================================== */
 /* BARRIER POINTS
 /* ================================================================== */

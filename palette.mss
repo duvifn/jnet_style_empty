@@ -61,8 +61,8 @@ Map { font-directory: url(./fonts); }
 /* LANDUSE & LANDCOVER COLORS
 /* ================================================================== */
 
-@land:              #FCFBE7;
-@water:             #b3d6f6;
+@land:              rgb(239, 223, 198); //#FCFBE7;
+@water:             rgb(155, 195, 220);//#b3d6f6;
 @grass:             #E6F2C1;
 @beach:             #FFEEC7;
 @park:              #DAF2C1;
@@ -75,7 +75,7 @@ Map { font-directory: url(./fonts); }
 @school:            #FFF5CC;
 @sports:            #B8E6B8;
 
-@residential:       rgba(247, 246, 226, 0.78);
+@residential:       rgba(239, 223, 198, 0.78); //rgba(247, 246, 226, 0.78);
 @commercial:        @land * 0.97;
 @industrial:        @land * 0.96;
 @parking:           #EEE;
