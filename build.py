@@ -38,20 +38,16 @@ parser.add_argument('-l' ,'--language', metavar='LANGUAGE', type=str, default='e
                     help='A prefered language code in which to title places')                  
 args = parser.parse_args()
 
-# python replace_mapnik_style.py -i mapnik.xml -d fake_dbname -u fake_user_name -p fake_password -s fake_host -e /media/duvi/Extreme/TopoOSM/OpenTopoMap/raw -k /media/duvi/Extreme/temp/openstreetmap-carto/data/simplified-land-polygons-complete-3857/simplified_land_polygons.shp -b /media/duvi/Extreme/temp/openstreetmap-carto/data/land-polygons-split-3857/land_polygons.shp
+# python replace_mapnik_style.py -i mapnik.xml -d fake_dbname -u fake_user_name -p fake_password -s fake_host -e /fake_path/to/external/layers -k /media/duvi/Extreme/temp/openstreetmap-carto/data/simplified-land-polygons-complete-3857/simplified_land_polygons.shp -b /media/duvi/Extreme/temp/openstreetmap-carto/data/land-polygons-split-3857/land_polygons.shp
 input_file=open(args.input_file).read()
-input_file = input_file.replace('<Parameter name="dbname"><![CDATA[fake_db_name]]></Parameter>','<Parameter name="dbname"><![CDATA[' + args.db_name +']]></Parameter>')
-input_file = input_file.replace('<Parameter name="user"><![CDATA[fake_user_name]]></Parameter>', '<Parameter name="user"><![CDATA[' +  args.user_name + ']]></Parameter>')
-input_file = input_file.replace('<Parameter name="password"><![CDATA[fake_password]]></Parameter>', '<Parameter name="password"><![CDATA[' + args.password + ']]></Parameter>')
-input_file = input_file.replace('<Parameter name="host"><![CDATA[fake_host]]></Parameter>', '<Parameter name="host"><![CDATA[' + args.host + ']]></Parameter>')
-input_file = input_file.replace('<Parameter name="file"><![CDATA[/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_30.tif]]></Parameter>', ' <Parameter name="file"><![CDATA[' + args.external_layers_folder + '/hillshade_30.tif]]></Parameter>')
-input_file = input_file.replace('<Parameter name="file"><![CDATA[/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_90.tif]]></Parameter>', '<Parameter name="file"><![CDATA[' + args.external_layers_folder + '/hillshade_90.tif]]></Parameter>')
-input_file = input_file.replace('<Parameter name="file"><![CDATA[/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_700.tif]]></Parameter>', '<Parameter name="file"><![CDATA[' + args.external_layers_folder + '/hillshade_700.tif]]></Parameter>')
-input_file = input_file.replace('<Parameter name="file"><![CDATA[/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_1000.tif]]></Parameter>', '<Parameter name="file"><![CDATA[' + args.external_layers_folder + '/hillshade_1000.tif]]></Parameter>')
-input_file = input_file.replace('<Parameter name="file"><![CDATA[/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_5000.tif]]></Parameter>', '<Parameter name="file"><![CDATA[' + args.external_layers_folder + '/hillshade_5000.tif]]></Parameter>')
-input_file = input_file.replace('<Parameter name="file"><![CDATA[/media/duvi/Extreme/temp/openstreetmap-carto/data/simplified-land-polygons-complete-3857/simplified_land_polygons.shp]]></Parameter>', '<Parameter name="file"><![CDATA['  + args.simplified_land_polygons + ']]></Parameter>')
-input_file = input_file.replace('<Parameter name="file"><![CDATA[/media/duvi/Extreme/temp/openstreetmap-carto/data/land-polygons-split-3857/land_polygons.shp]]></Parameter>', '<Parameter name="file"><![CDATA[' + args.land_polygons  + ']]></Parameter>')
-input_file = input_file.replace('tags -> \'name:en\'', 'tags -> \'name:' + args.language  + '\'')
+input_file = input_file.replace('$db_name', args.db_name)
+input_file = input_file.replace('$user_name', args.user_name)
+input_file = input_file.replace('$password', args.password)
+input_file = input_file.replace('$host', args.host)
+input_file = input_file.replace('$extenral_layer_folder', args.external_layers_folder)
+input_file = input_file.replace('$simplified_shp', args.simplified_land_polygons)
+input_file = input_file.replace('$land_shp', args.land_polygons)
+input_file = input_file.replace('$language_code', args.language)
 
        
 
@@ -60,18 +56,14 @@ with open(args.input_file, 'w') as of:
 
 if args.input_project_file:
     input_file=open(args.input_project_file).read()
-    input_file.replace('"dbname": "fake_db_name"','"dbname": "' + args.db_name +'"')
-    input_file = input_file.replace('"user": "fake_user_name"', '"user": "' +  args.user_name + '"')
-    input_file = input_file.replace('"password": "fake_password"', '"password": "' + args.password + '"')
-    input_file = input_file.replace('"host": "fake_host"', '"host": "' + args.host + '"')
-    input_file = input_file.replace('/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_30.tif', args.external_layers_folder + '/hillshade_30.tif')
-    input_file = input_file.replace('/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_90.tif', args.external_layers_folder + '/hillshade_90.tif')
-    input_file = input_file.replace('/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_700.tif', args.external_layers_folder + '/hillshade_700.tif')
-    input_file = input_file.replace('/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_1000.tif', args.external_layers_folder + '/hillshade_1000.tif')
-    input_file = input_file.replace('/media/duvi/Extreme/TopoOSM/OpenTopoMap/raw/hillshade_5000.tif', args.external_layers_folder + '/hillshade_5000.tif')
-    input_file = input_file.replace('/media/duvi/Extreme/temp/openstreetmap-carto/data/simplified-land-polygons-complete-3857/simplified_land_polygons.shp', args.simplified_land_polygons)
-    input_file= input_file.replace('/media/duvi/Extreme/temp/openstreetmap-carto/data/land-polygons-split-3857/land_polygons.shp', args.land_polygons)
-    input_file = input_file.replace('tags -> \'name:en\'', 'tags -> \'name:' + args.language  + '\'')
+    input_file = input_file.replace('$db_name', args.db_name)
+    input_file = input_file.replace('$user_name', args.user_name)
+    input_file = input_file.replace('$password', args.password)
+    input_file = input_file.replace('$host', args.host)
+    input_file = input_file.replace('$extenral_layer_folder', args.external_layers_folder)
+    input_file = input_file.replace('$simplified_shp', args.simplified_land_polygons)
+    input_file = input_file.replace('$land_shp', args.land_polygons)
+    input_file = input_file.replace('$language_code', args.language)
     
     with open(args.input_project_file, 'w') as of:
         of.write(input_file)
